@@ -1,0 +1,27 @@
+.about {
+  display: flex;
+  justify-content: space-between;
+}
+.about__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  height: 120px;
+  background-color: var(--btn-bg-color);
+  border-radius: 4px;
+}
+
+.about__title {
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
+  color: var(--nav-color);
+}
+
+.about__content {
+  width: 270px;
+  line-height: 1.71;
+  color: var(--text-color);
+}
