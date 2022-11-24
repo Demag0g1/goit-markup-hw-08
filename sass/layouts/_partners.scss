@@ -1,16 +1,28 @@
 .partners {
   fill: var(--link-color);
   display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.partners__item {
+  height: 92px;
+
+  width: calc((100% - 30px) / 2);
+
+  @media screen and (min-width: $tablet) {
+    width: calc((100% - 60px) / 3);
+  }
+  @media screen and (min-width: $desktop) {
+    width: calc((100% - 150px) / 6);
+    // padding: 16px 32px;
+  }
 }
 
 .partners__link {
   display: flex;
   justify-content: center;
-  align-items: center;
-  width: 170px;
-  height: 92px;
+  padding: 16px 0;
   border: 1px solid var(--link-color);
   border-radius: 4px;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -20,6 +32,16 @@
   &:hover {
     fill: var(--accent-color);
     border-color: var(--accent-color);
+  }
+
+  @media screen and (min-width: $mobile) {
+    width: 210px;
+  }
+  @media screen and (min-width: $tablet) {
+    width: 226px;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 170px;
   }
 }
 

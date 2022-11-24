@@ -1,10 +1,6 @@
 .hero {
   background-color: var(--footer-bg-color);
-  background-image: linear-gradient(
-      rgba(47, 48, 58, 0.4),
-      rgba(47, 48, 58, 0.4)
-    ),
-    url(../images/new_photo.jpg);
+  background-image: var(--gradient), url(../images/hero-bg-mob.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -15,8 +11,24 @@
   box-sizing: border-box;
   text-align: center;
   padding: 118px 0;
-  @media screen and (min-width: 1200px) {
+
+  @include retina {
+    background-image: var(--gradient), url(../images/hero-bg-mob-2x.jpg);
+  }
+
+  @media screen and (min-width: $tablet) {
+    background-image: var(--gradient), url(../images/hero-bg-tablet.jpg);
+    @include retina {
+      background-image: var(--gradient), url(../images/hero-bg-tablet-2x.jpg);
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
     padding: 200px 0;
+    background-image: var(--gradient), url(../images/new_photo.jpg);
+    @include retina {
+      background-image: var(--gradient), url(../images/hero-bg-2x.jpg);
+    }
   }
 }
 
@@ -24,7 +36,7 @@
   max-width: 100%;
   color: var(--bg-color);
   font-weight: 900;
-  font-size: 26px;
+  font-size: 21px;
   line-height: 1.62;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -34,10 +46,14 @@
   margin-left: auto;
   margin-right: auto;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $mobile) {
+    font-size: 26px;
+  }
+
+  @media screen and (min-width: $tablet) {
     max-width: 360px;
   }
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: $desktop) {
     max-width: 696px;
     font-size: 44px;
     line-height: 1.36;
