@@ -161,6 +161,7 @@ h1 {
 
 .navigation__logo {
   display: flex;
+  padding: 16px 0;
   color: var(--logo-color);
   font-family: Raleway, sans-serif;
   font-weight: 700;
@@ -174,8 +175,14 @@ h1 {
   font-size: 26px;
   line-height: 1.19;
 }
+@media screen and (min-width: 768px) {
+  .navigation__logo {
+    padding: 26px 0;
+  }
+}
 @media screen and (min-width: 1200px) {
   .navigation__logo {
+    padding: 24px 0;
     font-size: 26px;
     line-height: 1.19;
   }
@@ -199,38 +206,35 @@ h1 {
 }
 
 .mob-menu {
-  display: inline-flex;
-  padding: 16px 15px;
+  display: flex;
+  width: 100%;
   background-color: transparent;
   right: 15px;
   top: 10px;
   position: absolute;
-  z-index: 1;
 }
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
   .mob-menu {
     display: none;
   }
 }
 
 .menu-button {
-  position: absolute;
+  position: fixed;
+  margin-top: 10px;
+  margin-right: 15px;
   top: 0;
   right: 0;
   padding: 0;
-  margin: 0;
+  margin-left: auto;
   border: none;
   background-color: transparent;
   fill: var(--logo-color);
+  z-index: 2;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .menu-button:hover {
   fill: var(--accent-color);
-}
-@media screen and (min-width: 480px) {
-  .menu-button {
-    display: none;
-  }
 }
 
 .menu-button.is-open .icon-menu_close {
@@ -246,22 +250,91 @@ h1 {
 }
 
 .menu-conteiner {
-  display: block;
-  position: absolute;
   top: 0;
   left: 0;
+  position: fixed;
   width: 100vw;
-  height: 796px;
+  height: 100vh;
   padding: 40px 48px;
+  z-index: 1;
   background-color: var(--bg-color);
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
 }
 .menu-conteiner.is-open {
   display: none;
 }
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 768px) {
   .menu-conteiner {
     display: none;
   }
+}
+
+.mob-site-nav {
+  display: inline-block;
+  color: var(--nav-color);
+  margin-bottom: auto;
+}
+
+.mob-site-nav__item {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 1.175;
+  letter-spacing: 0.02em;
+}
+.mob-site-nav__item:not(:last-child) {
+  margin-bottom: 32px;
+}
+
+.mob-site-nav__link {
+  color: var(--nav-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.mob-site-nav__link:hover {
+  color: var(--accent-color);
+}
+
+.mob-contacts {
+  margin-bottom: 64px;
+}
+
+.mob-contacts__phone {
+  display: inline-block;
+  margin-bottom: 32px;
+  font-weight: 500;
+  font-size: 34px;
+  line-height: 1.18;
+  letter-spacing: 0.02em;
+  color: var(--accent-color);
+}
+
+.mob-contacts__address {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.167;
+  letter-spacing: 0.02em;
+  color: var(--text-color);
+}
+
+.mob-social {
+  display: flex;
+}
+
+.mob-social__list {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.22;
+  letter-spacing: 0.02em;
+}
+.mob-social__list:not(:last-child) {
+  margin-right: 10px;
+  padding-right: 10px;
+  border-right: 1px solid rgba(33, 33, 33, 0.2);
+}
+
+.mob-social__link {
+  color: var(--accent-color);
 }
 
 .btn {
@@ -611,11 +684,6 @@ h1 {
   border-radius: 2px;
   background-color: var(--accent-color);
 }
-@media screen and (min-width: 768px) {
-  .site-nav__link {
-    margin-bottom: 10px;
-  }
-}
 
 .contacts {
   display: none;
@@ -625,33 +693,38 @@ h1 {
 }
 @media screen and (min-width: 768px) {
   .contacts {
-    display: inline;
-    padding-top: 21px;
-    padding-bottom: 21px;
+    display: flex;
+    flex-direction: column;
+    padding: 21px 0;
+    align-items: flex-start;
     margin-left: auto;
     font-weight: 500;
+    font-size: 12px;
     line-height: 1.14;
     letter-spacing: 0.02em;
+  }
+  .contacts :not(:last-child) {
+    margin-bottom: 10px;
   }
 }
 @media screen and (min-width: 1200px) {
   .contacts {
     display: flex;
+    flex-direction: row;
+  }
+  .contacts :not(:last-child) {
+    margin-right: 30px;
   }
 }
 
-.contacts__item {
-  align-items: center;
-}
 .contacts .contacts__item {
-  margin-bottom: 10px;
   color: var(--text-color);
 }
 @media screen and (min-width: 1200px) {
-  .contacts .contacts__item + .contacts__item {
+  .contacts .contacts .contacts__item + .contacts .contacts__item {
     margin-left: 50px;
   }
-  .contacts .contacts__item {
+  .contacts .contacts .contacts__item {
     margin: 0;
   }
 }

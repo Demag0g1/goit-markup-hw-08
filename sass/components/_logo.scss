@@ -1,5 +1,6 @@
 .navigation__logo {
   display: flex;
+  padding: 16px 0;
   color: var(--logo-color);
   font-family: Raleway, sans-serif;
   font-weight: 700;
@@ -13,8 +14,12 @@
     font-size: 26px;
     line-height: 1.19;
   }
+  @media screen and (min-width: $tablet) {
+    padding: 26px 0;
+  }
 
   @media screen and (min-width: $desktop) {
+    padding: 24px 0;
     font-size: 26px;
     line-height: 1.19;
   }
