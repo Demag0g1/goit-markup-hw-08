@@ -24,15 +24,15 @@
 }
 .navigation--another {
   text-align: center;
+  margin-bottom: 60px;
+
   @media screen and (min-width: $tablet) {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin-bottom: 60px;
-  }
-  @media screen and (min-width: $tablet) {
     margin-bottom: 0;
   }
+
   @media screen and (min-width: $desktop) {
     margin-top: 0;
     text-align: start;
