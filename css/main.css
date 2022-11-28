@@ -1076,10 +1076,14 @@ h1 {
     margin-bottom: 60px;
   }
 }
+@media screen and (min-width: 768px) {
+  .navigation--another {
+    margin-bottom: 0;
+  }
+}
 @media screen and (min-width: 1200px) {
   .navigation--another {
     margin-top: 0;
-    margin-bottom: 0;
     text-align: start;
     justify-content: space-between;
   }
