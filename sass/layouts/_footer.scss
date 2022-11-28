@@ -28,9 +28,11 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    margin-bottom: 60px;
   }
   @media screen and (min-width: $desktop) {
     margin-top: 0;
+    margin-bottom: 0;
     text-align: start;
     justify-content: space-between;
   }
@@ -51,6 +53,13 @@
   & a:hover,
   & a:focus {
     color: var(--accent-color);
+  }
+}
+
+.nav-another__coordinate {
+  margin-bottom: 60px;
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 0;
   }
 }
 
@@ -77,8 +86,10 @@
 }
 .subscription {
   text-align: center;
+  margin-bottom: 60px;
   @media screen and (min-width: $desktop) {
     text-align: start;
+    margin-bottom: 0;
   }
 }
 .join {
@@ -89,7 +100,6 @@
   text-transform: uppercase;
   color: var(--bg-color);
 
-  margin-top: 60px;
   margin-bottom: 20px;
 
   @media screen and (min-width: $tablet) {
@@ -101,9 +111,6 @@
 }
 
 .subscribe {
-  @media screen and (min-width: $tablet) {
-    margin-bottom: 20px;
-  }
   @media screen and (min-width: $desktop) {
     margin: 0;
     padding: 0;
@@ -114,7 +121,6 @@
 
 .sign {
   @media screen and (min-width: $tablet) {
-    margin-top: 60px;
   }
   @media screen and (min-width: $desktop) {
     margin-top: 0;
