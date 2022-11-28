@@ -333,13 +333,14 @@ h1 {
 }
 .mob-social__list:not(:last-child) {
   margin-right: 5px;
-  padding-right: 10px;
+  padding-right: 8px;
   border-right: 1px solid rgba(33, 33, 33, 0.2);
 }
 @media screen and (min-width: 480px) {
   .mob-social__list {
     font-size: 18px;
     margin-right: 10px;
+    padding-right: 10px;
   }
 }
 
